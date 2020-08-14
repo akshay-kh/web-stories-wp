@@ -139,10 +139,3 @@ export const STORY_VIEWING_LABELS = {
     'web-stories'
   ),
 };
-
-export const STORY_ANIMATION_STATE = {
-  RESET: 'reset',
-  PAUSED: 'paused',
-  SCRUBBING: 'scrubbing',
-  PLAYING: 'playing',
-};

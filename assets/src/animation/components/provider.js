@@ -18,7 +18,6 @@
  * External dependencies
  */
 import {
-  createContext,
   useCallback,
   useEffect,
   useMemo,
@@ -33,12 +32,13 @@ import { useFeature } from 'flagged';
 /**
  * Internal dependencies
  */
+import { createContext } from '../../edit-story/utils/context';
 import { AnimationPart, throughput } from '../parts';
 import { AnimationProps } from '../parts/types';
 import { clamp } from '../../dashboard/utils';
 import StoryPropTypes from '../../edit-story/types';
 
-const Context = createContext(null);
+const Context = createContext({ state: {}, actions: {} });
 
 const WAAPIAnimationMachine = {
   idle: {

@@ -42,9 +42,14 @@ export function generateKeyframesMap(targets, getAnimationParts) {
 
 function AMPKeyframes() {
   const {
-    state: { providerId, animationTargets },
-    actions: { getAnimationParts },
-  } = useStoryAnimationContext();
+    providerId,
+    animationTargets,
+    getAnimationParts,
+  } = useStoryAnimationContext(({ state, actions }) => ({
+    providerId: state.providerId,
+    animationTargets: state.animationTargets,
+    getAnimationParts: actions.getAnimationParts,
+  }));
 
   const keyframesMap = useMemo(
     () => generateKeyframesMap(animationTargets, getAnimationParts),

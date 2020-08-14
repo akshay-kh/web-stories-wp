@@ -17,8 +17,7 @@
 /**
  * WordPress dependencies
  */
-import { __, sprintf } from '@wordpress/i18n';
-
+import { sprintf, __ } from '@wordpress/i18n';
 /**
  * External dependencies
  */
@@ -26,8 +25,8 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 /**
  * Internal dependencies
  */
+import { STORY_ANIMATION_STATE } from '../../../animation';
 import { UnitsProvider } from '../../../edit-story/units';
-import { STORY_ANIMATION_STATE } from '../../constants';
 import { StoryPropType } from '../../types';
 import { getPagePreviewHeights } from '../../utils';
 import PreviewPage from '../previewPage';

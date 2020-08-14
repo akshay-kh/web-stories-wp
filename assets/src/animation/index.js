@@ -15,5 +15,5 @@
  */
 export * from './components';
 export * from './constants';
-export * from './parts';
 export * from './outputs';
+export * from './parts';

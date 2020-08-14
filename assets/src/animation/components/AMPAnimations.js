@@ -21,9 +21,14 @@ import useStoryAnimationContext from './useStoryAnimationContext';
 
 function AMPAnimations() {
   const {
-    state: { providerId, animationTargets },
-    actions: { getAnimationParts },
-  } = useStoryAnimationContext();
+    providerId,
+    animationTargets,
+    getAnimationParts,
+  } = useStoryAnimationContext(({ state, actions }) => ({
+    providerId: state.providerId,
+    animationTargets: state.animationTargets,
+    getAnimationParts: actions.getAnimationParts,
+  }));
 
   return animationTargets.reduce(
     (animators, target) => [

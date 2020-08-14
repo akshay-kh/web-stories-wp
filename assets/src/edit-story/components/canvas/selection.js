@@ -17,11 +17,11 @@
 /**
  * Internal dependencies
  */
-import { STORY_ANIMATION_STATE } from '../../../dashboard/constants';
+import { STORY_ANIMATION_STATE } from '../../../animation';
 import { useStory } from '../../app';
 import useCanvas from '../canvas/useCanvas';
-import SingleSelectionMoveable from './singleSelectionMoveable';
 import MultiSelectionMoveable from './multiSelectionMoveable';
+import SingleSelectionMoveable from './singleSelectionMoveable';
 
 function Selection() {
   const { selectedElements, isAnimating } = useStory((state) => ({

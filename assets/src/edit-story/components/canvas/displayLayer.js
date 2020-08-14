@@ -24,8 +24,11 @@ import { memo, useCallback, useEffect } from 'react';
 /**
  * Internal dependencies
  */
-import { StoryAnimation, useStoryAnimationContext } from '../../../animation';
-import { STORY_ANIMATION_STATE } from '../../../dashboard/constants';
+import {
+  StoryAnimation,
+  STORY_ANIMATION_STATE,
+  useStoryAnimationContext,
+} from '../../../animation';
 import { useStory } from '../../app';
 import DisplayElement from './displayElement';
 import { Layer, PageArea } from './layout';
@@ -37,9 +40,9 @@ function DisplayPage({
   editingElement,
   resetAnimationState,
 }) {
-  const {
-    actions: { WAAPIAnimationMethods },
-  } = useStoryAnimationContext();
+  const WAAPIAnimationMethods = useStoryAnimationContext(
+    ({ actions }) => actions.WAAPIAnimationMethods
+  );
 
   useEffect(() => {
     switch (animationState) {

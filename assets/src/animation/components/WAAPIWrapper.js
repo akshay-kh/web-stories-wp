@@ -58,9 +58,12 @@ ComposableWrapper.propTypes = {
 };
 
 function WAAPIWrapper({ children, target }) {
-  const {
-    actions: { getAnimationParts, hoistWAAPIAnimation },
-  } = useStoryAnimationContext();
+  const { getAnimationParts, hoistWAAPIAnimation } = useStoryAnimationContext(
+    ({ actions }) => ({
+      getAnimationParts: actions.getAnimationParts,
+      hoistWAAPIAnimation: actions.hoistWAAPIAnimation,
+    })
+  );
 
   return (
     <ComposableWrapper

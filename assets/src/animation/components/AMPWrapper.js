@@ -66,9 +66,9 @@ ComposableWrapper.propTypes = {
 };
 
 function AMPWrapper({ target, children }) {
-  const {
-    actions: { getAnimationParts },
-  } = useStoryAnimationContext();
+  const getAnimationParts = useStoryAnimationContext(
+    ({ actions }) => actions.getAnimationParts
+  );
 
   return (
     <ComposableWrapper animationParts={getAnimationParts(target)}>
