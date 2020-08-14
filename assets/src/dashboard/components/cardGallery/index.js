@@ -25,7 +25,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 /**
  * Internal dependencies
  */
-import { STORY_ANIMATION_STATE } from '../../../animation';
+import { STORY_ANIMATION_STATE } from '../../../edit-story/animation';
 import { UnitsProvider } from '../../../edit-story/units';
 import { StoryPropType } from '../../types';
 import { getPagePreviewHeights } from '../../utils';
